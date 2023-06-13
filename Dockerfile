@@ -5,4 +5,4 @@ RUN mvn clean install
 
 FROM adhig93/tomcat-conf
 COPY --from=build /javaapp/target/*.war /usr/local/tomcat/webapps/
-EXPOSE 8000
+EXPOSE 8080
