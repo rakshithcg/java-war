@@ -3,6 +3,5 @@ WORKDIR /javaapp
 COPY . .
 RUN mvn clean install
 
-FROM tomcat
-COPY --from=build /javaapp/target/works-with-heroku.1.0.war /usr/local/tomcat/works-with-heroku.1.0.war
-CMD ["java", "-jar", "/usr/local/works-with-heroku.1.0.war"]
+FROM adhig93/tomcat-conf
+COPY --from=build /javaapp/target/*.war /usr/local/tomcat/webapps/
