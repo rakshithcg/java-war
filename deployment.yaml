@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app
+  nameSpace: my-namespace
 spec:
+  replicas: 2
   selector:
-    replicas: 2
-    nameSpace: my-namespace
     matchLabels:
       app: web
   template:
