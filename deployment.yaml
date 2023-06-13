@@ -4,6 +4,7 @@ metadata:
   name: my-app
 spec:
   selector:
+    replicas: 2
     nameSpace: my-namespace
     matchLabels:
       app: web
